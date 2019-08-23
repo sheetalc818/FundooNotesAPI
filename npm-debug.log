@@ -1,0 +1,67 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'owner', 'ls', 'fundooNotes' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly mapToRegistry name fundooNotes
+5 silly mapToRegistry using default registry
+6 silly mapToRegistry registry https://registry.npmjs.org/
+7 silly mapToRegistry uri https://registry.npmjs.org/fundooNotes
+8 verbose request uri https://registry.npmjs.org/fundooNotes
+9 verbose request no auth needed
+10 info attempt registry request try #1 at 1:13:35 PM
+11 verbose request id 09a79130c098a1dc
+12 http request GET https://registry.npmjs.org/fundooNotes
+13 http 404 https://registry.npmjs.org/fundooNotes
+14 verbose headers { date: 'Fri, 23 Aug 2019 07:43:36 GMT',
+14 verbose headers   'content-type': 'application/json',
+14 verbose headers   'content-length': '21',
+14 verbose headers   connection: 'keep-alive',
+14 verbose headers   'set-cookie':
+14 verbose headers    [ '__cfduid=d3cece4195b37636bfd82f68978d650d31566546215; expires=Sat, 22-Aug-20 07:43:35 GMT; path=/; domain=.npmjs.org; HttpOnly' ],
+14 verbose headers   'cf-cache-status': 'MISS',
+14 verbose headers   'cache-control': 'max-age=300',
+14 verbose headers   'cf-ray': '50ab74d838668a5f-BOM',
+14 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+14 verbose headers   vary: 'accept-encoding, accept',
+14 verbose headers   server: 'cloudflare' }
+15 silly get cb [ 404,
+15 silly get   { date: 'Fri, 23 Aug 2019 07:43:36 GMT',
+15 silly get     'content-type': 'application/json',
+15 silly get     'content-length': '21',
+15 silly get     connection: 'keep-alive',
+15 silly get     'set-cookie':
+15 silly get      [ '__cfduid=d3cece4195b37636bfd82f68978d650d31566546215; expires=Sat, 22-Aug-20 07:43:35 GMT; path=/; domain=.npmjs.org; HttpOnly' ],
+15 silly get     'cf-cache-status': 'MISS',
+15 silly get     'cache-control': 'max-age=300',
+15 silly get     'cf-ray': '50ab74d838668a5f-BOM',
+15 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+15 silly get     vary: 'accept-encoding, accept',
+15 silly get     server: 'cloudflare' } ]
+16 error owner ls Couldn't get owner data fundooNotes
+17 verbose stack Error: Not found : fundooNotes
+17 verbose stack     at makeError (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+17 verbose stack     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+17 verbose stack     at Request._callback (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+17 verbose stack     at Request.self.callback (/usr/share/npm/node_modules/request/request.js:198:22)
+17 verbose stack     at emitTwo (events.js:126:13)
+17 verbose stack     at Request.emit (events.js:214:7)
+17 verbose stack     at Request.<anonymous> (/usr/share/npm/node_modules/request/request.js:1082:10)
+17 verbose stack     at emitOne (events.js:121:20)
+17 verbose stack     at Request.emit (events.js:211:7)
+17 verbose stack     at IncomingMessage.<anonymous> (/usr/share/npm/node_modules/request/request.js:1009:12)
+18 verbose statusCode 404
+19 verbose pkgid fundooNotes
+20 verbose cwd /home/admin1/Desktop/API
+21 error Linux 4.15.0-55-generic
+22 error argv "/usr/bin/node" "/usr/bin/npm" "owner" "ls" "fundooNotes"
+23 error node v8.10.0
+24 error npm  v3.5.2
+25 error code E404
+26 error 404 Not found : fundooNotes
+27 error 404
+28 error 404 'fundooNotes' is not in the npm registry.
+29 error 404 Your package name is not valid, because
+30 error 404 1. name can no longer contain capital letters
+31 error 404 Note that you can also install from a
+32 error 404 tarball, folder, http url, or git url.
+33 verbose exit [ 1, true ]

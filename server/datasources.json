@@ -1,0 +1,38 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongoDB": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "fundonotes",
+    "password": "",
+    "name": "mongoDB",
+    "user": "",
+    "connector": "mongodb"
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./client"
+  },
+  "mailer": {
+    "name": "mailer",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "${SENDER_EMAIL_HOST}",
+        "secure": true,
+        "port": "${SENDER_EMAIL_PORT}",
+        "auth": {
+          "user": "${SENDER_EMAIL_ID}",
+          "pass": "${SENDER_EMAIL_PASSWORD}"
+        }
+      }
+    ]
+  }
+}

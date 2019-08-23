@@ -1,0 +1,27 @@
+{
+  "loopback-component-explorer": {
+    "mountPath": "/explorer",
+    "generateOperationScopedModels": true
+  },
+  "loopback-component-winston": {
+    "level": "verbose",
+    "transports": [
+      {
+        "type": "Console",
+        "json": true
+      },
+      {
+        "type": "File",
+        "name": "info-file",
+        "filename": "error.log",
+        "level": "info"
+      },
+      {
+        "type": "File",
+        "name": "error-file",
+        "filename": "error.log",
+        "level": "error"
+      }
+    ]
+  }
+}

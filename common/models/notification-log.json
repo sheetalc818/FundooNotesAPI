@@ -1,0 +1,43 @@
+{
+  "name": "notificationLog",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "notificationFor": {
+      "type": "string",
+      "required": true
+    },
+    "notificationPayload": {
+      "type": "object",
+      "required": true
+    },
+    "message": {
+      "type": "string",
+      "required": true
+    },
+    "sentStatus": {
+      "type": "object",
+      "required": true
+    },
+    "createdDate": {
+      "type": "date",
+      "required": true
+    },
+    "modifiedDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

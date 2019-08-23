@@ -1,0 +1,124 @@
+{
+  "name": "notes",
+  "plural": "notes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "isPined": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "isArchived": {
+      "type": "boolean",
+      "default": false
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "reminder": {
+      "type": [
+        "string"
+      ]
+    },
+    "createdDate": {
+      "type": "date",
+      "required": true
+    },
+    "modifiedDate": {
+      "type": "date",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": false
+    },
+    "label": {
+      "type": [
+        "string"
+      ]
+    },
+    "typeOfNote": {
+      "type": "string",
+      "required": false
+    },
+    "checkList": {
+      "type": [
+        "object"
+      ]
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "linkUrl": {
+      "type": "string"
+    },
+    "collaborators": {
+      "type": [
+        "object"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "noteCheckLists": {
+      "type": "hasMany",
+      "model": "noteCheckLists",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "noteLabels": {
+      "type": "hasAndBelongsToMany",
+      "model": "noteLabel",
+      "property": "",
+      "options": {
+        "validate": true,
+        "forceId": true
+      }
+    },
+    "questionAndAnswerNotes": {
+      "type": "hasMany",
+      "model": "questionAndAnswerNotes",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

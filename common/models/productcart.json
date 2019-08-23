@@ -1,0 +1,67 @@
+{
+  "name": "productcart",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "isOrderPlaced": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPaymentDone": {
+      "type": "boolean",
+      "default": false
+    },
+    "isCanceled": {
+      "type": "boolean",
+      "default": false
+    },
+    "price": {
+      "type": "number",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "default": false
+    },
+    "createdDate": {
+      "type": "date",
+      "required": true
+    },
+    "modifiedDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "product": {
+      "type": "belongsTo",
+      "model": "product",
+      "foreignKey": ""
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    }
+  },
+  "acls": [{
+    "principalType": "ROLE",
+    "principalId": "$authenticated",
+    "permission": "ALLOW",
+    "property": "placeOrderAgainstCart"
+  },
+  {
+    "principalType": "ROLE",
+    "principalId": "$authenticated",
+    "permission": "ALLOW",
+    "property": "getUserCartData"
+  }],
+  "methods": {}
+}

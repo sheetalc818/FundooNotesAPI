@@ -1,0 +1,41 @@
+{
+  "name": "noteCheckLists",
+  "plural": "noteCheckLists",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "itemName": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "createdDate": {
+      "type": "date"
+    },
+    "modifiedDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "notes": {
+      "type": "belongsTo",
+      "model": "notes",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

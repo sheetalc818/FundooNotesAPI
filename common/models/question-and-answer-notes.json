@@ -1,0 +1,73 @@
+{
+  "name": "questionAndAnswerNotes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "message": {
+      "type": "string",
+      "required": true
+    },
+    "like": {
+      "type": [
+        "object"
+      ]
+    },
+    "rate": {
+      "type": [
+        "object"
+      ]
+    },
+    "createdDate": {
+      "type": "date",
+      "required": true
+    },
+    "modifiedDate": {
+      "type": "date",
+      "required": true
+    },
+    "threadId": {
+      "type": "string",
+      "required": true
+    },
+    "isApproved": {
+      "type": "boolean",
+      "default": true
+    },
+    "isCanceled": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "notes": {
+      "type": "belongsTo",
+      "model": "notes",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "parent": {
+      "type": "belongsTo",
+      "model": "questionAndAnswerNotes",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
